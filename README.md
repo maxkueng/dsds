@@ -1,6 +1,8 @@
 dsds
 ====
 
+[![Build Status](https://secure.travis-ci.org/maxkueng/dsds.png?branch=master)](http://travis-ci.org/maxkueng/dsds)
+
 This is a __Dead Simple Data Store__ for Node.js. It's an in-memory data
 store that automatically persists to file (unless you tell it not to).
 dsds does not care about speed, security, ACIDity and what not. It's
