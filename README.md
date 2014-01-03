@@ -46,7 +46,7 @@ Possible options:
    automatically created if necessary.
 
 ```javascript
-var fighters = dsds('fighters', {
+var store = dsds('fighters', {
     filePath: './data/fighters.json'
 });
 ```
