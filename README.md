@@ -106,7 +106,7 @@ Replaces a record and returns the new record. Leaves the ID intact.
 
 ```javascript
 var id = 'ce4c05cd-00fc-410d-9f17-209b543e232f';
-var evilRyu = store.update(id, {
+var evilRyu = store.replace(id, {
     name:    'Evil Ryu',
     gender:  'male',
     country: 'Japan',
