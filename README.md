@@ -155,7 +155,7 @@ Loads the data from `options.filePath`. You don't have to call this
 manually.
 
 ```javascript
-store.persist();
+store.load();
 ```
 
 ## License
