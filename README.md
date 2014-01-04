@@ -51,12 +51,28 @@ var store = dsds('fighters', {
 });
 ```
 
-### `store.get(id)`
+### `store.get(id [, property])`
 
 Returns the object with the ID `id`.
 
+If a `property` argument is passed, the corresponding property value of 
+the record is returned.
+
 ```javascript
 var ryu = store.get('ce4c05cd-00fc-410d-9f17-209b543e232f');
+var ryuHeight = store.get('ce4c05cd-00fc-410d-9f17-209b543e232f', 'height');
+```
+
+### `store.set(id [, property], value)`
+
+If a `property` argument is passed this sets the property `property` of 
+the record with ID `id` and returns the new property value.
+
+If the `property` argument is omitted, this will behave exactly like 
+`store.replace()`
+
+```javascript
+var newHeight = store.set('ce4c05cd-00fc-410d-9f17-209b543e232f', 'height', 190);
 ```
 
 ### `store.all()`

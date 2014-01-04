@@ -28,8 +28,36 @@ function createDSDS (name, options) {
 		filePath: path.resolve(process.cwd(), options.filePath),
 		records: {},
 
-		get: function (id) {
-			return dsds.records[id] || null;
+		get: function (id, property) {
+			var rec = dsds.records[id] || null;
+
+			if (property && rec) {
+				return rec[property] || null;
+			}
+
+			return rec;
+		},
+
+		set: function (id, property, value) {
+			if (!dsds.records[id]) { return false; }
+			
+			if (typeof value === 'undefined') {
+				value = property;
+				property = null;
+			}
+
+			if (property) {
+				dsds.records[id][property] = value;
+
+				if (dsds.persistence && dsds.autoPersist) {
+					dsds.persist();
+
+				}
+				return dsds.records[id][property];
+			}
+
+			return dsds.replace(id, value);
+
 		},
 
 		all: function () {

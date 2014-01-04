@@ -65,6 +65,34 @@ describe('dsds', function () {
 
 	});
 
+	describe('#get', function () {
+
+		it('should get a record by ID', function () {
+			var chunLi = fighters.get(sampleIDs[3]);
+			expect(chunLi).to.have.property('id', sampleIDs[3]);
+			expect(chunLi).to.have.property('name', sampleData[3].name);
+			expect(chunLi).to.have.property('gender', sampleData[3].gender);
+			expect(chunLi).to.have.property('country', sampleData[3].country);
+			expect(chunLi).to.have.property('height', sampleData[3].height);
+		});
+
+		it('should get a single property by ID and property name', function () {
+			var chunLiHeight = fighters.get(sampleIDs[3], 'height');
+			expect(chunLiHeight).to.equal(sampleData[3].height);
+		});
+
+	});
+
+	describe('#set', function () {
+	
+		it('should set a single property by ID and property name', function () {
+			var newHeight = fighters.set(sampleIDs[3], 'height', 150);
+			expect(newHeight).to.equal(150);
+			expect(fighters.get(sampleIDs[3], 'height')).to.equal(newHeight);
+		});
+	
+	});
+
 	describe('#update', function () {
 	
 		it('should update a record', function () {
