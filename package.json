@@ -1,6 +1,6 @@
 {
   "name": "dsds",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dead simple data store. In-memory with persistence to file.",
   "repository": {
     "type": "git",
